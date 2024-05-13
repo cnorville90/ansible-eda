@@ -13,4 +13,6 @@
     - name: EDA - Basic Webhook Testing from EDA COntroller to AAP
       condition: event.payload.actionType == "SCALE"
       action:
-        debug:
+        run_job_template:
+          name: 'RickJames'
+          organization: 'Default'
