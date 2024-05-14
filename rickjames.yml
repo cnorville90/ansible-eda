@@ -8,3 +8,5 @@
     - name: Print something cool
       ansible.builtin.debug:
         msg: "I'm Rick James!!"
+  
+
