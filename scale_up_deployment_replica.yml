@@ -1,0 +1,25 @@
+---
+- name: Scale up deployment replicas on a OCP deployment
+  hosts: localhost
+  gather_facts: false
+
+  tasks: 
+
+    # Ask Lightspeed to help us write a playbook for remediation
+    - name: Scale up the deployment catalogue in the namespace robot-shop to 1 replicas
+      # Content suggestion provided by Ansible Lightspeed
+      kubernetes.core.k8s:
+        state: present
+        definition:
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            name: catalogue
+            namespace: robot-shop
+          spec:
+            replicas: 1
+            selector:
+              matchLabels:
+                app: catalogue
+
+
