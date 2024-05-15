@@ -16,7 +16,7 @@
   #         organization: 'Default'
   #
   #
-
+  rules:
     - name: Run a JCL job on a Z/OS Mainframe
       condition: event.payload.message == "MERGSORT"
       action:
