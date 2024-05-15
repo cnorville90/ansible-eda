@@ -12,5 +12,12 @@
   rules:
     - name: EDA - Basic Webhook Testing from EDA COntroller to AAP
       condition: event.payload.actionType == "SCALE"
-      action:
-        debug:
+      actions:
+        - debug:
+        - run_job_template:
+            name: 'Rick James'
+            organization: 'Default'
+            job_args:
+              extra_vars:
+                ocp_dep: "{{ event['payload']['ocp_deployment_name'] }}"
+                ocp_ns: "{{ event['payload']['ocp_namespace'] }}"
