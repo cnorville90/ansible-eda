@@ -14,6 +14,8 @@
   #         # name: 'ZOS - Submit a JCL Job'
   #         name: 'SNOW - Create Incident'
   #         organization: 'Default'
+  #
+  #
 
     - name: Run a JCL job on a Z/OS Mainframe
       condition: event.payload.message == "MERGSORT"
