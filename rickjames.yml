@@ -1,20 +1,12 @@
 ---
-- name: I'm Rick James!
-  hosts: localhost
+- name: The Rick James Test Playbook!
+  hosts: all
   gather_facts: false
   vars:
     ocp_dep: foo
     ocp_ns: bar
 
   tasks:
-
-    - name: Extra vars ocp_namespace
-      ansible.builtin.debug:
-        var: ocp_ns
-
-    - name: Extra vars ocp_dep
-      ansible.builtin.debug:
-        var: ocp_dep
 
     - name: Print something cool
       ansible.builtin.debug:
