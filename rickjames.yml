@@ -10,4 +10,4 @@
 
     - name: Print something cool
       ansible.builtin.debug:
-        msg: "I'm Rick James!!"
+        msg: "I'm Rick James!! running on {{ inventory_hostname }}! Enjoy Yourself!"
