@@ -11,9 +11,7 @@
 
   rules:
     - name: EDA - Basic Webhook Testing from EDA COntroller to AAP
-      condition: event.payload.actionType == "SCALE"
+      condition: event.meta is defined
       actions:
         - debug:
-        - run_job_template:
-            name: 'Rick James'
-            organization: 'Default'
+            msg: "Hello"
