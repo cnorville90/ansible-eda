@@ -1,5 +1,5 @@
 ---
-- name: Basic Webhook Actions
+- name: Basic Webhook Actions Test
   hosts: all
   sources:
     - ansible.eda.webhook:
@@ -13,5 +13,6 @@
     - name: EDA - Basic Webhook Testing from EDA COntroller to AAP
       condition: event.meta is defined
       actions:
-        - debug:
-            msg: "Hello"
+        run_job_template:
+          name: 'RickJames'
+          organization: 'Default'
