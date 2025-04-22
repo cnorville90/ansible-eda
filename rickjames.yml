@@ -2,12 +2,10 @@
 - name: The Rick James Test Playbook!
   hosts: all
   gather_facts: false
-  vars:
-    ocp_dep: foo
-    ocp_ns: bar
 
   tasks:
 
     - name: Print something cool
       ansible.builtin.debug:
-        msg: "I'm Rick James!! running on {{ test }}! Enjoy Yourself!"
+        msg: "I'm Rick James!! running on {{ alert_host }}! Enjoy Yourself! |
+              OS Version is: {{ alert_os }} and we are spinning up {{ alert_spinups }} instance"
