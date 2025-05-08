@@ -13,14 +13,14 @@
   rules:
 
     - name: Event
-      condition: event.payload.problem.problemText == "System load too high"
+      condition: event.payload.problem.problem_text == "System load too high"
       action:
         run_job_template:
           name: 'SNOW - Instana Event'
           organization: 'Default'
           job_args:
             extra_vars:
-              problemText: "{{ event['payload']['problem']['problemText'] }}"
+              problemText: "{{ event['payload']['problem']['problem_text'] }}"
               explanation: "{{ event['payload']['problem']['explanation'] }}"
               fix_suggestion: "{{ event['payload']['problem']['fix_suggestion'] }}"
               instance_id: "{{ event['payload']['problem']['host_id'] }}"
