@@ -15,7 +15,7 @@
         state: new
         description: |
           "EDA Event from Instana - {{ problemText }} on {{ instance_id }}. {{ fix_suggestion }}. {{ explanation }}."
-        short_description: "Instana Alert on {{ instance_id }}."
+        short_description: "Instana Alert on {{ instance_fqdn }} - {{ instance_id }}"
         caller: "{{ sn_username }}"
         urgency: "low"
         impact: "low"

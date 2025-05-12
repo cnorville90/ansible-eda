@@ -24,3 +24,4 @@
               explanation: "{{ event['payload']['problem']['explanation'] }}"
               fix_suggestion: "{{ event['payload']['problem']['fix_suggestion'] }}"
               instance_id: "{{ event['payload']['problem']['host_id'] }}"
+              instance_fqdn: "{{ event['payload']['metadata']['fqdn'] }}"
