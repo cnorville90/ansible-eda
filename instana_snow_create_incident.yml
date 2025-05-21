@@ -19,7 +19,7 @@
         caller: "{{ sn_username }}"
         urgency: "low"
         impact: "low"
-      register: snow_incident
+      register: new_incident
 
     - name: Display new SNOW Incident number
       ansible.builtin.debug:
