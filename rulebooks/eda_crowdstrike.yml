@@ -6,7 +6,7 @@
         falcon_client_id: "{{ falcon_client_id }}"
         falcon_client_secret: "{{ falcon_client_secret }}"
         falcon_cloud: us-2
-        stream_name: eda
+        stream_name: Crowdstrike
         latest: true
         include_event_types:
           - EPPDetectionSummaryEvent
