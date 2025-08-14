@@ -1,0 +1,20 @@
+---
+- name: Listen for CrowdStrike Falcon detection events
+  hosts: localhost
+  sources:
+    - crowdstrike.falcon.eventstream:
+        falcon_client_id: "{{ falcon_client_id }}"
+        falcon_client_secret: "{{ falcon_client_secret }}"
+        falcon_cloud: us-2
+        stream_name: eda
+        latest: true
+        include_event_types:
+          - EPPDetectionSummaryEvent
+  
+  rules:
+    - name: EDA - Crowdstrike Events from the Falcon Console
+      condition: event.meta is defined
+      action:
+        run_job_template:
+          name: 'EDA - Basic Test'
+          organization: 'Default'
