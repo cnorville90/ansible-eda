@@ -1,0 +1,25 @@
+---
+- name: Listen for CrowdStrike Falcon detection events
+  hosts: localhost
+  sources:
+    - crowdstrike.falcon.eventstream:
+        falcon_client_id: "{{ FALCON_CLIENT_ID }}"
+        falcon_client_secret: "{{ FALCON_CLIENT_SECRET }}"
+        falcon_cloud: us-2
+        stream_name: Crowdstrike
+        latest: true
+        include_event_types:
+          - "DetectionSummaryEvent"
+  
+  rules:
+    - name: EDA - Crowdstrike Events from the Falcon Console - Gimme Everything!
+      condition: event.falcon is defined
+      action:
+        print_event:
+          pretty: true
+          var_root: falcon
+
+        # run_job_template:
+        #   name: 'EDA - Basic Test'
+        #   organization: 'Default'
+

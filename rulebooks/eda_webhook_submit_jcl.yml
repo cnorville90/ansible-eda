@@ -23,4 +23,4 @@
         run_job_template:
           # name: 'ZOS - Submit a JCL Job'
           name: 'Z/OS - Submit a Job and Create SNOW Ticket'
-          organization: 'Default'
+          organization: 'Vandelay Industries'
