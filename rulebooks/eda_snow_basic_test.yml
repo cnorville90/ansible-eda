@@ -9,10 +9,6 @@
 
 
   rules:
-    - name: Output ServiceNow Information
-      condition: event.meta is defined
-      action:
-        debug: 
 
     - name: "EDA From Catalog Item: Norville - SNOW AAP EDA Cool Stuff"
       condition: event.payload.catalog_item == "Norville - SNOW AAP EDA Cool Stuff"
@@ -20,3 +16,6 @@
         run_job_template:
           name: 'EDA - Basic Test'
           organization: 'Default'
+          job_args:
+            extra_vars:
+              quote: "{{ event.payload.quote_of_the_day }}"

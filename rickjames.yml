@@ -7,4 +7,4 @@
 
     - name: Print something cool
       ansible.builtin.debug:
-        msg: "I'm Rick James!!"
+        msg: "I'm Rick James!! and I say {{ quote }}!!" 
