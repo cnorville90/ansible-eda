@@ -21,5 +21,17 @@
         run_job_template:
           name: 'Z/OS - Submit a Job and update SNOW Ticket'
           organization: 'Vandelay Industries'
+          job_args:
+            extra_vars:
+              sn_catalog_item: "{{ event.payload.catalog_item }}"
+              jcl_job_to_submit: "{{ event.payload.jcl_job_to_submit }}"
+              sn_request_number: "{{ event.payload.sn_request_number }}"
+              requester: "{{ event.payload.requester }}"
 
     
+    # payload:
+    #   catalog_item: Norville - SNOW EDA AAP JCL ZOS
+    #   event: SERVICE_CATALOG
+    #   jcl_job_to_submit: MERGSORT
+    #   request_number: REQ0011828
+    #   requester: cnorvill@redhat.com
