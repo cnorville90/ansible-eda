@@ -14,6 +14,9 @@
         run_job_template:
           name: 'EDA - Basic Test'
           organization: 'Default'
+          job_args:
+            extra_vars:
+              quote: "{{ event.payload.quote_of_the_day }}"
 
     - name: EDA - Kick off a JCL Job on a Z/OS System
       condition: event.payload.catalog_item == "Norville - SNOW EDA AAP JCL ZOS"
@@ -23,10 +26,11 @@
           organization: 'Vandelay Industries'
           job_args:
             extra_vars:
-              sn_catalog_item: "{{ event.payload.catalog_item }}"
-              jcl_job_to_submit: "{{ event.payload.jcl_job_to_submit }}"
-              sn_request_number: "{{ event.payload.sn_request_number }}"
-              requester: "{{ event.payload.requester }}"
+              sn_catalog_item: "{{ event['payload']['catalog_item'] }}"
+              jcl_job_to_submit: "{{ event['payload']['jcl_job_to_submit'] }}"
+              sn_request_number: "{{ event['payload']['sn_request_number'] }}"
+              requester: "{{ event['payload']['requester'] }}"
+    
 
     
     # payload:
