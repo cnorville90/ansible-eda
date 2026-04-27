@@ -14,3 +14,12 @@
         run_job_template:
           name: 'EDA - Basic Test'
           organization: 'Default'
+
+    - name: EDA - Kick off a JCL Job on a Z/OS System
+      condition: event.payload.catalog_item == "Norville - SNOW EDA AAP JCL ZOS"
+      action:
+        run_job_template:
+          name: 'Z/OS - Submit a Job and update SNOW Ticket'
+          organization: 'Vandelay Industries'
+
+    
