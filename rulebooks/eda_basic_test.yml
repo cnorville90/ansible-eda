@@ -23,7 +23,7 @@
       action:
         run_job_template:
           name: 'Z/OS - Submit a Job and Update SNOW RITM'
-          organization: 'Vandelay Industries'
+          organization: 'Default'
           job_args:
             extra_vars:
               sn_catalog_item: "{{ event.payload.catalog_item }}"
